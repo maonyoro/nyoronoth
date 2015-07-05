@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<!-- これは開発用なので本番に適用しないでください。適用するなら本番に対してマージすること -->
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title> {title}{block:PostTitle} - {PostTitle}{/block:PostTitle}</title>
+
+  <meta name="keywords" content="maonyoro,まおにょろ">  
+  <meta name="description" content="にょろの巣">
+  <!-- link href="./img/favicon.png" rel="icon" type="image/png">
+  <link href="./img/favicon.ico" rel="shortcut icon" -->
+  <meta http-equiv="Content-Script-type" content="text/javascript" />
+  <meta http-equiv="Content-Style-type" content="text/css" />
+
+  <!-- metatags for Responsive design -->
+  <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+
+  <!-- Google Fonts -->
+  <link href='http://fonts.googleapis.com/css?family=Orbitron' rel='stylesheet' type='text/css'>
+
+  <!--[if lt IE 9]>
+  <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+
+  <!-- * jQuery ******************************************** -->
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.js"></script>
+  <script type="text/javascript">
+
+  $(document).ready( function(){
+
+    /* Change bgcolor of posts */            
+    $("div.tab").hover( function(){
+      $(this).addClass("select");
+    }, function(){
+      $(this).removeClass("select");
+    });
+
+    /* Open folded-space */
+    $(".open-button").click( function(){
+      $(this).next("div.fold").show();
+      $(this).hide();
+      $(this).find(".vine-embed")[0].contentDocument.location.reload(true);
+    });
+
+  });
+  </script>
+
+  <!-- include CSS file from Google Drive -->
+  <link rel="stylesheet" type="text/css" href="./index.css">
+
+</head>
+
+<!-- ****************************************************************** -->
+
+<body>
+
+  <!-- HEADER -->
+  <div id="header">
+    <p> <a href="./">nyoronoth</a> </p>
+    <div id="menu">
+      <p><a href="./">Top</a></p>
+      <p><a href="./">Twitter</a></p>
+      <p><a href="./">images</a></p>
+      <p><a href="#profile">maonyoro</a></p>
+      <p><a href="./">Contact</a></p>
+    </div>
+  </div>
+
+  <!-- LEFT COLUMN -->
+  <div id="posts">
+    {block:Posts}
+
+    {block:Text}
+    <div class="caption">
+      <h1><a href="{Permalink}">{title}</a></h1>
+      {block:IndexPage}
+        <p class="open-button">ε= ∈(　⊂ ´･ω･)＜ open</p>
+      <div class="fold">
+      {/block:IndexPage}
+        {body}
+        {block:More}<div class="readmore"><a href="{Permalink}">- - - 続きを読む - - -</a></div>{/block:More}
+      {block:IndexPage}
+      </div>
+      {/block:IndexPage}
+      {block:HasTags}<div class="tags">Tag: {block:Tags}<a href="{TagURL}">{Tag}</a> {/block:Tags}</div>{/block:HasTags}
+      <div class="date">
+        {Year}.{MonthNumberWithZero}.{DayOfMonthWithZero} {24Hour}:{Minutes} ({TimeAgo})
+        | <a href="{Permalink}">permalink</a>
+        <div class="like_and_reblog_buttons">{ReblogButton}</div>
+        <div class="like_and_reblog_buttons">{LikeButton}</div>
+      </div>
+    </div>
+    {/block:Text}
+
+    {block:Photo}
+    <div class="caption">
+      {LinkOpenTag}<img src="{PhotoURL-250}" />{LinkCloseTag}
+      {block:Caption}
+      {Caption}
+      {/block:Caption}
+      <div class="date">
+        {Year}.{MonthNumberWithZero}.{DayOfMonthWithZero} {24Hour}:{Minutes} ({TimeAgo})
+        | <a href="{Permalink}">permalink</a>
+        <div class="like_and_reblog_buttons">{ReblogButton}</div>
+        <div class="like_and_reblog_buttons">{LikeButton}</div>
+      </div>
+    </div>
+    {/block:Photo}
+
+    {block:Photoset}
+    <div class="caption">
+      {Photoset-250}
+      {block:Caption}
+      {Caption}
+      {/block:Caption}
+      <div class="date">
+        {Year}.{MonthNumberWithZero}.{DayOfMonthWithZero} {24Hour}:{Minutes} ({TimeAgo})
+        | <a href="{Permalink}">permalink</a>
+        <div class="like_and_reblog_buttons">{ReblogButton}</div>
+        <div class="like_and_reblog_buttons">{LikeButton}</div>
+      </div>
+    </div>
+    {/block:Photoset}
+
+    {block:Audio}
+    <div class="caption">
+      <div class="player">
+        "{block:TrackName}{TrackName}{/block:TrackName}" by
+        {block:Artist}{Artist}{/block:Artist}
+        [{PlayCount} play]
+        {AudioPlayerBlack}
+      </div>
+      {block:Caption}
+      {Caption}
+      {/block:Caption}
+      <div class="date">
+        {Year}.{MonthNumberWithZero}.{DayOfMonthWithZero} {24Hour}:{Minutes} ({TimeAgo})
+        | <a href="{Permalink}">permalink</a>
+        <div class="like_and_reblog_buttons">{ReblogButton}</div>
+        <div class="like_and_reblog_buttons">{LikeButton}</div>
+      </div>
+    </div>
+    {/block:Audio}
+    
+    {block:Link}
+    <div class="caption">
+      <p>Link Post: <a href="{URL}" {Target}>{Name}</a> </p>
+      {block:Description}<div>{Description}</div>{/block:Description}
+      <div class="date">
+        {Year}.{MonthNumberWithZero}.{DayOfMonthWithZero} {24Hour}:{Minutes} ({TimeAgo})
+        | <a href="{Permalink}">permalink</a>
+        <div class="like_and_reblog_buttons">{ReblogButton}</div>
+        <div class="like_and_reblog_buttons">{LikeButton}</div>
+      </div>
+    </div>
+    {/block:Link}
+
+    {block:Permalink}
+    <!-- AddThis Button BEGIN -->
+    <div class="addthis_toolbox addthis_default_style " addthis:title="{Title}" addthis:url="{Permalink}">
+      <a class="addthis_button_preferred_1"></a>
+      <a class="addthis_button_preferred_2"></a>
+      <a class="addthis_button_preferred_3"></a>
+      <a class="addthis_button_preferred_4"></a>
+      <a class="addthis_button_compact"></a>
+      <a class="addthis_counter addthis_bubble_style"></a>
+    </div>
+    <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=xa-5336bfce53f816f9"></script>
+    <!-- AddThis Button END -->
+    {block:PostNotes}
+    <div>{PostNotes}</div>
+    {/block:PostNotes}
+    {/block:Permalink}
+
+
+    {/block:Posts}
+
+    <!-- 戻る進む -->
+    <div id="navigation">
+      {block:NextPage}     <a href="{NextPage}">NEXT</a> {/block:NextPage}
+      {block:PreviousPage} <a href="{PreviousPage}">OLD</a> {/block:PreviousPage}
+
+      {block:PermalinkPagination}
+      {block:NextPost}     <a href="{NextPost}">NEXT</a> {/block:NextPost}
+      {block:PreviousPost} <a href="{PreviousPost}">OLD</a> {/block:PreviousPost}
+      {/block:PermalinkPagination}
+    </div>
+
+  </div>
+
+
+  <!-- PROFILE -->
+  <div id="profile">
+    <h3>Profile</h3>
+    <a href="{PortraitURL-96}" style="border-bottom:0">
+      <img src="{PortraitURL-96}" alt="profile image" />
+    </a>
+    <p>Author : mao.</p>
+    {Description}
+    <h3>Tag Cloud</h3>
+    <div id="tagCloud"></div>
+
+    <h3>Link</h3>
+
+    <ul class="link">
+    <li><a href="http://maonyoro-img.tumblr.com" target="_blank">画像置き場</a></li>
+    <li><a href="https://www.twitter.com/maonyoro/" target="_blank">Twitter (@maonyoro) </a></li>
+    <li><a href="http://twitpic.com/photos/maonyoro" target="_blank">Twitpic(old)</a></li>
+    <li><a href="https://vine.co/u/1060952826341150720" target="_blank">Vine (maonyoro)</a></li>
+    <li><a href="http://www.lastfm.jp/user/maonyoro" target="_blank">Last.fm</a>
+    <li><a href="http://www.tumblr.com/docs/en/custom_themes" target="_blank">How to create a custom HTML theme at Tumblr</a></li>
+    <li><a href="http://goo.gl/QoA4qJ" target="_blank">Sugi＠デジマート</a></li>
+    </ul>
+  </div>
+
+</div><!-- id=body --> 
+
+<!-- HOOTER -->
+<div id="hooter">
+  <p class="bigfont"><a href="#header"><img src="./arrow.png">Back To Top</a></p>
+  <br />
+  <p>Copyright 2013 mao.</p>
+</div>
+
+
+</body>
+</html>
+
+
+
+

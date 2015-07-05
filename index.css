@@ -1,0 +1,285 @@
+@charset "UTF-8";
+* {
+  padding: 0;
+  margin: 0; }
+
+body {
+  font-size: 11.5pt;
+  font-family: 'Roboto','Lato','Lucida Grande',"ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, Osaka, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
+  font-weight: normal;
+  width: 1024px;
+  min-width: 240px;
+  margin-left: auto;
+  margin-right: auto;
+  color: #444444;
+  line-height: 1.65em;
+  letter-spacing: 0.06em;
+  background-image: url("http://static.tumblr.com/ewmbzgu/DQTncbdla/bg.png"); }
+  @media screen and (max-width: 1023px) {
+    body {
+      width: 100%; } }
+
+img {
+  border: 0px;
+  margin-top: 15px;
+  margin-bottom: 15px; }
+
+a {
+  color: #d3b585;
+  text-decoration: none;
+  border-bottom: 1px dotted #d3b585; }
+  a:hover, a:active {
+    color: #ffd8d8;
+    border-bottom: 1px dotted #ffd8d8; }
+
+#header {
+  width: 100%;
+  min-height: 85px;
+  height: 100%;
+  min-width: 320px;
+  background-image: url("http://static.tumblr.com/ewmbzgu/DQTncbdla/bg.png");
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 20px; }
+  #header a {
+    color: #d3b585;
+    border-bottom: 0; }
+  #header p {
+    font-size: 30pt;
+    font-family: 'Orbitron', sans-serif;
+    text-decoration: none;
+    text-shadow: 1px 1px 2px #fff;
+    padding-left: 10px;
+    padding-top: 20px; }
+    @media screen and (max-width: 1023px) {
+      #header p {
+        padding-left: 20px; } }
+  @media screen and (max-width: 1023px) {
+    #header #menu {
+      padding-left: 15px; } }
+  #header #menu p:first-child {
+    margin-left: 0px;
+    border-left: 0px; }
+  #header #menu p {
+    float: left;
+    border-left: 1px solid #d3b585;
+    margin-top: 15px;
+    padding-top: 0px;
+    height: 17px;
+    font-size: 16pt;
+    padding-left: 15px;
+    padding-right: 15px; }
+    @media screen and (max-width: 1023px) {
+      #header #menu p {
+        padding-left: 5px;
+        padding-right: 5px;
+        font-size: 13pt; } }
+    @media screen and (max-width: 480px) {
+      #header #menu p {
+        font-size: 10pt; } }
+
+#profile {
+  margin-left: 10px;
+  width: 210px;
+  float: left;
+  padding: 0px; }
+  @media screen and (max-width: 1023px) {
+    #profile {
+      width: 90%;
+      min-width: 200px;
+      padding-left: 2%; } }
+
+#posts {
+  float: left;
+  width: 800px; }
+  @media screen and (max-width: 1023px) {
+    #posts {
+      width: 100%;
+      min-width: 200px; } }
+
+.date {
+  text-align: right;
+  border-top: 1px solid #444;
+  margin-top: 5px;
+  padding: 1%; }
+
+.caption {
+  background: #fff;
+  border-radius: 2px;
+  width: 720px;
+  padding: 30px;
+  margin-bottom: 40px;
+  float: left;
+  margin-left: auto;
+  margin-right: auto; }
+  @media screen and (max-width: 1023px) {
+    .caption {
+      float: none;
+      width: 91%;
+      min-width: 170px;
+      margin-bottom: 12px;
+      padding-left: 2%;
+      padding-right: 2%; } }
+
+.player {
+  width: 400px;
+  background: #000;
+  color: #55ff55;
+  margin: 15px;
+  padding: 10px; }
+  @media screen and (max-width: 1023px) {
+    .player {
+      max-width: 200px;
+      min-width: 90%; } }
+
+#navigation {
+  font-size: 18pt;
+  padding: 10px;
+  text-align: center; }
+
+#hooter {
+  width: 100%;
+  min-width: 240px;
+  clear: left;
+  text-align: right; }
+
+h1 {
+  font-size: 17pt;
+  border-bottom: 1px solid #888;
+  padding-bottom: 10px; }
+  h1 a {
+    color: #444444;
+    border: 0px; }
+    h1 a:hover {
+      color: #444444;
+      border-bottom: 0px; }
+
+h2 {
+  font-size: 15pt;
+  border-left: 7px solid #999;
+  padding: 10px;
+  margin-left: 1px;
+  margin-top: 45px;
+  margin-bottom: 8px;
+  background-color: #F6F6F6; }
+
+h3 {
+  font-size: 13pt;
+  border-bottom: 1px dotted #aaa;
+  margin-top: 30px;
+  margin-bottom: 5px; }
+
+blockquote {
+  background: #fff8ff;
+  margin: 10px;
+  padding: 3px;
+  width: 93%;
+  min-width: 150px; }
+  blockquote h2 {
+    font-size: 12pt;
+    padding-left: 5px;
+    margin-top: 5px;
+    margin-bottom: 5px; }
+  blockquote p {
+    padding-left: 20px; }
+
+ul, li {
+  width: 95%;
+  min-width: 140px;
+  margin-left: 14px; }
+
+ol {
+  padding-left: 25px; }
+
+table {
+  margin-top: 15px;
+  border: 1px solid #aaa;
+  width: 80%; }
+  @media screen and (max-width: 1023px) {
+    table {
+      width: 100%; } }
+
+th, td {
+  border-bottom: 1px solid #777;
+  border-right: 1px solid #777;
+  padding: 10px; }
+
+strong {
+  text-decoration: bold; }
+
+.readmore {
+  text-align: center;
+  margin: 15px; }
+
+.like_and_reblog_buttons {
+  padding-left: 10px;
+  float: right; }
+
+.link {
+  padding-left: 25px; }
+  .link li {
+    margin-bottom: 5px; }
+
+.select {
+  background: #322;
+  background: rgba(48, 32, 32, 0.55);
+  cursor: pointer; }
+
+.vine-embed {
+  width: 320px;
+  height: 320px; }
+  @media screen and (max-width: 1023px) {
+    .vine-embed {
+      width: 100%;
+      height: auto;
+      max-width: 320px;
+      min-width: 200px;
+      max-height: 320px;
+      min-height: 200px; } }
+
+img {
+  max-width: 100%;
+  height: auto; }
+
+.open-button {
+  display: none; }
+  @media screen and (max-width: 1023px) {
+    .open-button {
+      display: block;
+      text-decoration: underline;
+      cursor: pointer;
+      padding: 3px; } }
+
+div.fold {
+  display: block; }
+  @media screen and (max-width: 1023px) {
+    div.fold {
+      display: none; } }
+
+.tags {
+  text-align: right;
+  padding: 3px; }
+
+pre {
+  font-size: 8.5pt;
+  background-color: #111;
+  color: #fff;
+  padding: 5px; }
+
+p {
+  margin-top: 20px;
+  margin-bottom: 20px; }
+
+.bigfont {
+  font-size: 18pt; }
+
+.ninja_onebutton {
+  margin-top: 15px;
+  margin-right: -8px; }
+  @media screen and (max-width: 1023px) {
+    .ninja_onebutton {
+      margin-top: 2px; } }
+
+.customisable-border {
+  border: 0;
+  border-radius: 1px; }
