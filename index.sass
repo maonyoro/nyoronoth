@@ -240,8 +240,18 @@ strong
 
 // read more
 .readmore
+  display: block
   text-align: center
-  margin: 15px
+  margin: 15px auto
+  padding: 3px
+  width: 100px
+  border: 1px solid #888
+  border-radius: 5px
+  color: #888
+  &:hover
+    color: #888
+    background-color: #eee
+    border: 1px solid #888
 
 .like_and_reblog_buttons
   padding-left: 10px
@@ -273,20 +283,6 @@ strong
 img
   max-width: 100%
   height: auto
-
-.open-button
-  display: none
-  @media screen #{$mobile}
-    display: block
-    text-decoration: underline
-    cursor: pointer
-    padding: 3px
-
-// jQueryで開く記事
-div.fold
-  display: block
-  @media screen #{$mobile}
-    display: none
 
 .tags
   text-align: right

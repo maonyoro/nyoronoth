@@ -1,9 +1,8 @@
 <!DOCTYPE html>
-<!-- これは開発用なので本番に適用しないでください。適用するなら本番に対してマージすること -->
 <html>
 <head>
   <meta charset="UTF-8">
-  <title> {title}{block:PostTitle} - {PostTitle}{/block:PostTitle}</title>
+  <title>{block:PostTitle}{PostTitle} - {/block:PostTitle}{title}</title>
 
   <meta name="keywords" content="maonyoro,まおにょろ">  
   <meta name="description" content="にょろの巣">
@@ -14,13 +13,30 @@
 
   <!-- metatags for Responsive design -->
   <meta name="viewport" content="width=device-width,initial-scale=1.0" />
-
+  
   <!-- Google Fonts -->
   <link href='http://fonts.googleapis.com/css?family=Orbitron' rel='stylesheet' type='text/css'>
-
+  <link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Poiret+One' rel='stylesheet' type='text/css'>
+  
   <!--[if lt IE 9]>
   <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
   <![endif]-->
+
+  <!-- Tag Cloud Widget -->
+  <script type="text/javascript" src="http://post-theory.com/public/tagcloud/maonyoro?sort=time&mincount=2&scale=false&pad=4&tagct=%20(%24)&scalect=false" async="async"></script>
+
+  <!-- Google Analytics -->
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-48994049-1']);
+    _gaq.push(['_trackPageview']);
+    (function() {
+     var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+     ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+     var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+     })();
+  </script>
 
   <!-- * jQuery ******************************************** -->
   <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.js"></script>
@@ -35,17 +51,10 @@
       $(this).removeClass("select");
     });
 
-    /* Open folded-space */
-    $(".open-button").click( function(){
-      $(this).next("div.fold").show();
-      $(this).hide();
-      $(this).find(".vine-embed")[0].contentDocument.location.reload(true);
-    });
-
   });
   </script>
 
-  <!-- include CSS file from Google Drive -->
+  <!-- include CSS file from GitHub -->
   <link rel="stylesheet" type="text/css" href="./index.css">
 
 </head>
@@ -56,15 +65,15 @@
 
   <!-- HEADER -->
   <div id="header">
-    <p> <a href="./">nyoronoth</a> </p>
+    <p> <a href="http://maonyoro.tumblr.com/">nyoronoth</a> </p>
     <div id="menu">
-      <p><a href="./">Top</a></p>
-      <p><a href="./">Twitter</a></p>
-      <p><a href="./">images</a></p>
-      <p><a href="#profile">maonyoro</a></p>
-      <p><a href="./">Contact</a></p>
+      <p><a href="http://maonyoro.tumblr.com/">Top</a></p>
+      <p><a href="https://twitter.com/maonyoro">Twitter</a></p>
+      <p><a href="http://maonyoro-img.tumblr.com/">images</a></p>
+      <p><a href="http://maonyoro.tumblr.com/contact">Contact</a></p>
     </div>
   </div>
+
 
   <!-- LEFT COLUMN -->
   <div id="posts">
@@ -74,13 +83,10 @@
     <div class="caption">
       <h1><a href="{Permalink}">{title}</a></h1>
       {block:IndexPage}
-        <p class="open-button">ε= ∈(　⊂ ´･ω･)＜ open</p>
-      <div class="fold">
       {/block:IndexPage}
         {body}
-        {block:More}<div class="readmore"><a href="{Permalink}">- - - 続きを読む - - -</a></div>{/block:More}
+        {block:More}<div><a href="{Permalink}" class="readmore">続きを読む</a></div>{/block:More}
       {block:IndexPage}
-      </div>
       {/block:IndexPage}
       {block:HasTags}<div class="tags">Tag: {block:Tags}<a href="{TagURL}">{Tag}</a> {/block:Tags}</div>{/block:HasTags}
       <div class="date">
@@ -89,6 +95,20 @@
         <div class="like_and_reblog_buttons">{ReblogButton}</div>
         <div class="like_and_reblog_buttons">{LikeButton}</div>
       </div>
+      
+      {block:PostTitle}
+      <!-- 忍者START -->
+<!--
+      <div class="ninja_onebutton"><script type="text/javascript">
+      //<![CDATA[
+      (function(d){if(typeof(window.NINJA_CO_JP_ONETAG_BUTTON_75456e205f0168aa527633a9b35096f6)=='undefined'){document.write("<sc"+"ript type='text\/javascript' src='http:\/\/omt.shinobi.jp\/b\/75456e205f0168aa527633a9b35096f6'><\/sc"+"ript>");}else{window.NINJA_CO_JP_ONETAG_BUTTON_75456e205f0168aa527633a9b35096f6.ONETAGButton_Load();}
+})(document);
+      //]]>
+      </script><span class="ninja_onebutton_hidden" style="display:none;">{Permalink}</span><span style="display:none;" class="ninja_onebutton_hidden">{block:Title}{Title}{/block:Title}</span></div>
+-->
+      <!-- 忍者END -->
+      {/block:PostTitle}
+    
     </div>
     {/block:Text}
 
@@ -156,33 +176,24 @@
     {/block:Link}
 
     {block:Permalink}
-    <!-- AddThis Button BEGIN -->
-    <div class="addthis_toolbox addthis_default_style " addthis:title="{Title}" addthis:url="{Permalink}">
-      <a class="addthis_button_preferred_1"></a>
-      <a class="addthis_button_preferred_2"></a>
-      <a class="addthis_button_preferred_3"></a>
-      <a class="addthis_button_preferred_4"></a>
-      <a class="addthis_button_compact"></a>
-      <a class="addthis_counter addthis_bubble_style"></a>
-    </div>
-    <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=xa-5336bfce53f816f9"></script>
-    <!-- AddThis Button END -->
+
     {block:PostNotes}
     <div>{PostNotes}</div>
     {/block:PostNotes}
     {/block:Permalink}
 
 
+
     {/block:Posts}
 
     <!-- 戻る進む -->
     <div id="navigation">
-      {block:NextPage}     <a href="{NextPage}">NEXT</a> {/block:NextPage}
-      {block:PreviousPage} <a href="{PreviousPage}">OLD</a> {/block:PreviousPage}
+      {block:NextPage}     <a href="{NextPage}">&#171; Older</a> {/block:NextPage}
+      {block:PreviousPage} <a href="{PreviousPage}">Newer &#187;</a> {/block:PreviousPage}
 
       {block:PermalinkPagination}
-      {block:NextPost}     <a href="{NextPost}">NEXT</a> {/block:NextPost}
-      {block:PreviousPost} <a href="{PreviousPost}">OLD</a> {/block:PreviousPost}
+      {block:NextPost}     <a href="{NextPost}">&#171; Old</a> {/block:NextPost}
+      {block:PreviousPost} <a href="{PreviousPost}">Next &#187;</a> {/block:PreviousPost}
       {/block:PermalinkPagination}
     </div>
 
@@ -195,21 +206,24 @@
     <a href="{PortraitURL-96}" style="border-bottom:0">
       <img src="{PortraitURL-96}" alt="profile image" />
     </a>
-    <p>Author : mao.</p>
-    {Description}
+    <p>Name : mao</p>
+    <p>{Description}</p>
+    <p>ε= ∈(　⊂ ´･ω･)</p>
+
+    <!-- Twitter Widget -->
+    <a class="twitter-timeline" href="https://twitter.com/maonyoro" data-widget-id="384263689299165184">@maonyoroさんのツイート</a><script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+    
     <h3>Tag Cloud</h3>
     <div id="tagCloud"></div>
 
     <h3>Link</h3>
 
     <ul class="link">
-    <li><a href="http://maonyoro-img.tumblr.com" target="_blank">画像置き場</a></li>
-    <li><a href="https://www.twitter.com/maonyoro/" target="_blank">Twitter (@maonyoro) </a></li>
-    <li><a href="http://twitpic.com/photos/maonyoro" target="_blank">Twitpic(old)</a></li>
-    <li><a href="https://vine.co/u/1060952826341150720" target="_blank">Vine (maonyoro)</a></li>
-    <li><a href="http://www.lastfm.jp/user/maonyoro" target="_blank">Last.fm</a>
-    <li><a href="http://www.tumblr.com/docs/en/custom_themes" target="_blank">How to create a custom HTML theme at Tumblr</a></li>
-    <li><a href="http://goo.gl/QoA4qJ" target="_blank">Sugi＠デジマート</a></li>
+        <li><a href="http://maonyoro-img.tumblr.com" target="_blank">画像置き場</a></li>
+        <li><a href="https://www.twitter.com/maonyoro/" target="_blank">Twitter (@maonyoro) </a></li>
+        <li><a href="http://twitpic.com/photos/maonyoro" target="_blank">Twitpic(old)</a></li>
+        <li><a href="https://vine.co/u/1060952826341150720" target="_blank">Vine (maonyoro)</a></li>
+        <li><a href="http://www.lastfm.jp/user/maonyoro" target="_blank">Last.fm</a>
     </ul>
   </div>
 
@@ -217,15 +231,9 @@
 
 <!-- HOOTER -->
 <div id="hooter">
-  <p class="bigfont"><a href="#header"><img src="./arrow.png">Back To Top</a></p>
-  <br />
   <p>Copyright 2013 mao.</p>
 </div>
 
 
 </body>
 </html>
-
-
-
-
