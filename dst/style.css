@@ -1,0 +1,49 @@
+@charset "UTF-8";
+body {
+  font-size: 62.5%;
+  font-family: 'Roboto','Lato','Lucida Grande',"ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, Osaka, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
+  font-weight: normal;
+  color: #505050;
+  letter-spacing: 0.16em; }
+
+.specialfont {
+  font-family: 'Rock Salt'; }
+
+.right {
+  text-align: right; }
+
+.debug-red {
+  border-top: red 1px solid;
+  border-bottom: red 1px solid; }
+
+.debug-blue {
+  border-top: blue 1px solid;
+  border-bottom: blue 1px solid; }
+
+.debug-green {
+  border-top: green 1px solid;
+  border-bottom: green 1px solid; }
+
+.tag {
+  background: #42b8dd; }
+
+#header {
+  font-size: 1.35em;
+  padding-top: 5px;
+  margin-bottom: 100px;
+  border-bottom: 1px solid #c3c3c3; }
+
+#contents .post .post-title h1 {
+  font-size: 2.4em; }
+
+#contents .post .post-info {
+  font-size: 1.25em; }
+
+#contents .post .post-article {
+  font-size: 1.45em;
+  letter-spacing: 0.13em; }
+
+#footer {
+  margin-top: 100px;
+  border-top: 1px solid #c3c3c3;
+  padding-top: 30px; }
