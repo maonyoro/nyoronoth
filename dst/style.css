@@ -32,6 +32,9 @@ body {
   padding-top: 5px;
   margin-bottom: 100px;
   border-bottom: 1px solid #c3c3c3; }
+  @media screen and (max-width: 48em) {
+    #header {
+      color: red; } }
 
 #contents .post .post-title h1 {
   font-size: 2.4em; }
