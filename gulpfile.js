@@ -11,6 +11,7 @@ gulp.task('default', function() {
     //gulp.watch('./src/*.coffee', ['coffee'] );
     gulp.src('./dst').pipe(
         webserver({
+            host: "0.0.0.0",
             livereload: true
         })
     );

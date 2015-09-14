@@ -2,6 +2,7 @@ doctype html
 html(lang="ja")
   head
     meta(charset="UTF-8")
+    meta(name="viewport" content="width=device-width")
     link(href='https://fonts.googleapis.com/css?family=Rock+Salt' rel='stylesheet' type='text/css')
     link(href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css')
     link(rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css")
@@ -17,18 +18,30 @@ html(lang="ja")
 
   body
     #header
-      // TODO: ヘッダメニューのレスポンシブ対応
       .pure-menu.pure-menu-horizontal
         a.pure-menu-heading.specialfont(href="#") nyoronoth
         ul.pure-menu-list
-          li.pure-menu-item.pure-menu-selected
-            a.pure-menu-link(href="#") Home
-          li.pure-menu-item
-            a.pure-menu-link(href="#") Twitter
-          li.pure-menu-item
-            a.pure-menu-link(href="#") Images
-          li.pure-menu-item
-            a.pure-menu-link(href="#") Contact
+          .pc-menu
+            li.pure-menu-item.pure-menu-selected
+              a.pure-menu-link(href="#") Home
+            li.pure-menu-item
+              a.pure-menu-link(href="#") Twitter
+            li.pure-menu-item
+              a.pure-menu-link(href="#") Images
+            li.pure-menu-item
+              a.pure-menu-link(href="#") Contact
+          .mobile-menu
+            // TODO: クリックでサブメニュー出るようにしたい
+            // TODO: メニュー右寄せ
+            li.pure-menu-item.pure-menu-has-children.pure-menu-allow-hover
+              a#menuLink1.pure-menu-link(href="#") Menu
+              ul.pure-menu-children
+                li.pure-menu-item
+                  a.pure-menu-link(href="#") Twitter
+                li.pure-menu-item
+                  a.pure-menu-link(href="#") Images
+                li.pure-menu-item
+                  a.pure-menu-link(href="#") Contact
 
     #contents
       .post
@@ -55,13 +68,13 @@ html(lang="ja")
       .footer-contents.pure-g
         .pure-u-4-24
         .pure-u-10-24
-          //h3 Profile
-          //  a(href="#" style="border-bottom:0")
-          //    img(src="https://38.media.tumblr.com/avatar_1e774e8f20f0_96.png" alt="profile image")
-          //  p Name : mao
-          //  p せつめい
-          //  p ε= ∈(　⊂ ´･ω･)＜
-          //    a(href="/profile") more info.
+          h3 Profile
+            a(href="#" style="border-bottom:0")
+              img(src="https://38.media.tumblr.com/avatar_1e774e8f20f0_96.png" alt="profile image")
+            p Name : mao
+            p せつめい
+            p ε= ∈(　⊂ ´･ω･)＜
+              a(href="/profile") more info.
         .twitter-widget.pure-u-6-24
           //a(class="twitter-timeline" href="https://twitter.com/maonyoro" data-widget-id="384263689299165184") @maonyoroさんのツイート
           script !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");

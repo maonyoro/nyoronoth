@@ -1,4 +1,9 @@
 // -----------------------------------------------
+// media query
+=mobile
+  @media screen and (max-width: 48em){ @content }
+
+// -----------------------------------------------
 // Global Setting
 body
   font:
@@ -45,8 +50,14 @@ h3
   padding-top: 5px
   margin-bottom: 100px
   border-bottom: 1px solid rgb(195, 195, 195)
-  @media screen and (max-width: 48em)
-    color: red
+  .pc-menu
+    display: inline
+    +mobile
+      display: none
+  .mobile-menu
+    display: none
+    +mobile
+      display: inline
 
 #contents
   // 各投稿用のスタイル
@@ -66,3 +77,4 @@ h3
   padding-top: 30px
 
   .footer-contents
+
