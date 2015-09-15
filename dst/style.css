@@ -28,10 +28,10 @@ body {
   background: #42b8dd; }
 
 #header {
+  background-image: url("http://static.tumblr.com/ewmbzgu/DQTncbdla/bg.png");
   font-size: 1.35em;
   padding-top: 5px;
-  margin-bottom: 100px;
-  border-bottom: 1px solid #c3c3c3; }
+  margin-bottom: 100px; }
   #header .pc-menu {
     display: inline; }
     @media screen and (max-width: 48em) {
@@ -43,15 +43,20 @@ body {
       #header .mobile-menu {
         display: inline; } }
 
-#contents .post .post-title h1 {
-  font-size: 2.4em; }
-
-#contents .post .post-info {
-  font-size: 1.25em; }
-
-#contents .post .post-article {
-  font-size: 1.45em;
-  letter-spacing: 0.13em; }
+#contents .post {
+  max-width: 1200px;
+  margin: 0 auto; }
+  #contents .post .post-title {
+    background-color: #fff; }
+    #contents .post .post-title h1 {
+      font-size: 2.4em; }
+  #contents .post .post-info {
+    background-color: #fff;
+    font-size: 1.25em; }
+  #contents .post .post-article {
+    background-color: #fff;
+    font-size: 1.45em;
+    letter-spacing: 0.13em; }
 
 #footer {
   margin-top: 100px;
