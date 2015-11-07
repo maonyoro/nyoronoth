@@ -49,7 +49,8 @@ body {
   #contents .post .post-title {
     background-color: #fff; }
     #contents .post .post-title h1 {
-      font-size: 2.4em; }
+      font-size: 2.4em;
+      margin-bottom: 15px; }
   #contents .post .post-info {
     background-color: #fff;
     font-size: 1.25em; }
