@@ -5,7 +5,7 @@
 
 body {
   font-size: 11.5pt;
-  font-family: 'Roboto','Lato','Lucida Grande',"ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, Osaka, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
+  font-family: "Roboto", "Lato", "Lucida Grande", "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, Osaka, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
   font-weight: normal;
   width: 1024px;
   min-width: 240px;
@@ -46,7 +46,7 @@ a {
     border-bottom: 0; }
   #header p {
     font-size: 30pt;
-    font-family: 'Orbitron', sans-serif;
+    font-family: "Orbitron", sans-serif;
     text-decoration: none;
     text-shadow: 1px 1px 2px #fff;
     padding-left: 10px;
@@ -146,7 +146,8 @@ a {
 h1 {
   font-size: 17pt;
   border-bottom: 1px solid #888;
-  padding-bottom: 10px; }
+  padding-bottom: 10px;
+  margin-bottom: 15px; }
   h1 a {
     color: #444444;
     border: 0px; }
@@ -264,6 +265,14 @@ pre {
 p {
   margin-top: 20px;
   margin-bottom: 20px; }
+
+hr {
+  border: 0;
+  height: 1px;
+  background-image: -webkit-linear-gradient(left, transparent, rgba(0, 0, 0, 0.75), transparent);
+  background-image: -moz-linear-gradient(left, transparent, rgba(0, 0, 0, 0.75), transparent);
+  background-image: -ms-linear-gradient(left, transparent, rgba(0, 0, 0, 0.75), transparent);
+  background-image: -o-linear-gradient(left, transparent, rgba(0, 0, 0, 0.75), transparent); }
 
 .bigfont {
   font-size: 18pt; }
